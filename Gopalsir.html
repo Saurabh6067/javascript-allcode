@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+    function clk() {
+        var he = document.getElementById("h").value;
+        var wi = document.getElementById("w").value;
+        var col = document.getElementById("clr").value;
+
+        document.getElementById("dv").style.height = he + "px";
+        document.getElementById("dv").style.width = wi + "px";
+        document.getElementById("dv").innerHTML = clr;
+    }
+</script>
+
+<body>
+    <div>
+        <h1>Enter height</h1>
+        <input type="text" id="h"><br><br>
+        <h1>Enter width</h1>
+        <input type="text" id="w"><br><br>
+        <h1>Chooose Color</h1>
+        <input type="file" id="clr"><br><br>
+        <!-- Chooose File <br><br> -->
+        <button onclick="clk()">Gett</button><br><br>
+        <div id="dv"></div>
+    </div>
+</body> 
+
+</html>

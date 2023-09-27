@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            margin: 100px auto;
+            box-shadow: 0px 0px 10px rgb(0, 43, 0);
+            height: 450px;
+            width: 450px;
+
+        }
+
+        table,
+        tr,
+        td {
+            border: 5px solid green;
+            border-collapse: collapse;
+
+        }
+
+        tr {
+            height: 150px;
+            width: 450px;
+        }
+
+        td {
+            height: 150px;
+            width: 450px;
+            font-size: 60px;
+            text-align: center;
+            line-height: 150px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        td:hover{
+            background-color: rgb(144, 226, 226);
+        }
+    </style>
+    <script>
+        var turn = 0;
+        var currentstate = [2, 2, 2, 2, 2, 2, 2, 2, 2];
+        var winPosition = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6]
+        ];
+        function turnchange(i,td)
+        {
+            if(currentstate[i] ==2)
+            {
+                if(turn==0)
+                {
+                    td.innerHTML ='O';
+                    turn =1;
+                    currentstate[i]=0;
+                }
+                else
+                {
+                    td.innerHTML ='X';
+                    turn =0;
+                    currentstate[i]=1;
+                }
+                
+                var win = checkWinner();
+                if(win ==0){
+                    hint.innerHTML="O Player Won"
+                    page.style.backgroundImage = "url(kiss.gif)"
+                }
+                else if(win ==1){
+                    hint.innerHTML="X Player Won"
+                    page.style.backgroundImage = "url(kiss.gif)"
+
+                }
+                 
+                var win = checkWinner();
+            }
+        }
+        
+        function checkWinner()
+            {
+                var win = 2;
+                for(var i= 0; i<8 ;i++)
+                {
+                    if
+                    (
+                        currentstate[winPosition[i][0]] == currentstate[winPosition[i][1]] &&
+                        currentstate[winPosition[i][0]] == currentstate[winPosition[i][2]]&&
+                        currentstate[winPosition[i][0]] !=2
+                    )
+                    {
+                        win = currentstate[winPosition[i][0]];
+                        break;
+                    }
+                }
+                return win;
+
+               
+            }
+               
+        
+
+    </script>
+</head>
+
+<body id="page">
+    <h1 id="hint"></h1>
+    <table>
+        <tr>
+            <td onclick="turnchange (0,this) "></td>
+            <td onclick="turnchange (1,this) "></td>
+            <td onclick="turnchange (2,this) "></td>
+        </tr>
+        <tr>
+            <td onclick="turnchange (3,this) "></td>
+            <td onclick="turnchange (4,this) "></td>
+            <td onclick="turnchange (5,this) "></td>
+        </tr>
+        <tr>
+            <td onclick="turnchange (6,this) "></td>
+            <td onclick="turnchange (7,this) "></td>
+            <td onclick="turnchange (8,this) "></td>
+        </tr>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<html>
+
+<head>
+
+    <style>
+        
+        body {
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+            min-height: 100vh;
+            background-color: aquamarine;
+            margin: 0px;
+        }
+
+        table {
+            background-color: cornflowerblue;
+            border-radius: 10px;
+            padding: 10px;
+            width: 400px;
+            height: 500px;
+            box-shadow: 2px 2px 4px silver;
+
+        }
+
+        button {
+            height: 60px;
+            width: 100%;
+            font-size: 25px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.2s;
+            /* display:grid;
+            grid-gap:10px;
+          grid-template-columns: 4,1fr; 4 show the how many button are recured and 1 fr show the friqvancy... */
+
+        }
+
+        button:hover {
+            background-color: darkolivegreen;
+            color: white;
+        }
+
+        input {
+            width: 500px;
+            height: 80px;
+            padding: 5px;
+            font-size: 24px;
+            border: none;
+            outline: none;
+            text-align: right;
+        }
+
+        h1 {
+            color: green;
+
+        }
+    </style>
+
+    <script>
+        function cleartext() {
+            var a = t1.value;
+            a = a.substr(0, a.length - 1);
+            t1.value = a;
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <form name="calc">
+
+        <table>
+
+            <tr>
+                <td colspan="4"> <input type="text" readonly name="box" id="t1" /> </td>
+            </tr>
+
+            <tr>
+                <td colspan="2"> <button type="button" onclick="calc.box.value = '' ">AC</button> </td>
+
+                <td> <button type="button" onclick="cleartext()"> &larr; </button> </td>
+                <td> <button type="button" onclick="calc.box.value +='/' ">/</button> </td>
+            </tr>
+
+            <tr>
+                <td> <button type="button" onclick="calc.box.value +='1' ">1</button> </td>
+                <td> <button type="button" onclick="calc.box.value +='2' ">2</button> </td>
+                <td> <button type="button" onclick="calc.box.value +='3' ">3</button> </td>
+                <td> <button type="button" onclick="calc.box.value +='' "></button> </td>
+            </tr>
+
+            <tr>
+                <td> <button type="button" onclick="calc.box.value +='4' ">4</button> </td>
+                <td> <button type="button" onclick="calc.box.value +='5' ">5</button> </td>
+                <td> <button type="button" onclick="calc.box.value +='6' ">6</button> </td>
+                <td> <button type="button" onclick="calc.box.value +='+' ">+</button> </td>
+            </tr>
+
+            <tr>
+                <td> <button type="button" onclick="calc.box.value +='7' ">7</button> </td>
+                <td> <button type="button" onclick="calc.box.value +='8' ">8</button> </td>
+                <td> <button type="button" onclick="calc.box.value +='9' ">9</button> </td>
+                <td> <button type="button" onclick="calc.box.value +='-' ">-</button> </td>
+            </tr>
+
+            <tr>
+                <td> <button type="button" onclick="calc.box.value +='.' ">.</button> </td>
+                <td> <button type="button" onclick="calc.box.value +='0' ">0</button> </td>
+                <td colspan="2"> <button type="button" onclick="calc.box.value = eval(calc.box.value) ">=</button> </td>
+
+            </tr>
+
+        </table>
+
+    </form>
+
+</body>
+
+</html>

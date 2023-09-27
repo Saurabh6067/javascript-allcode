@@ -1,0 +1,3 @@
+1.crate a text box to input user full name nd crate two more text
+ box to show first name and last in diff box.
+2. carte a text area and i 

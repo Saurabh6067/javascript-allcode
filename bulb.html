@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb</title>
+    <script>
+        function clk1(){
+            var a = document.getElementById("bulb1");
+            if(a.src.match("bulb1.jpg")){
+                bulb1.src="bulb3.jpeg";
+            }
+            
+        }
+        function clk2(){
+            var a = document.getElementById("bulb2");
+            if(a.src.match("bulb3.jpeg")){
+                bulb2.src="bulb1.jpg";
+            }
+            
+        }
+    </script>
+</head>
+<body>
+   
+    <img src="bulb1.jpg" alt="" height="300px" width="300px" id="bulb"> <br>
+
+    <button id="bulb1" onclick="clk1()" >On</button>      
+    <button id="bulb2" onclick="clk2()">Off</button>
+</body>
+</html>

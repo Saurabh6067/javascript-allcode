@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table
+    {
+        margin: 120px auto;
+        width: 400px;
+        height: 400px;
+        box-shadow: 10px 10px 10px rgb(43, 42, 42);
+    }
+    table:hover{
+        height: 450px;
+        width: 450px;
+    }
+    tr {
+        width: 400px;
+        height: 100px;
+
+    }
+    td{
+        width: 100px;
+        height: 100px;
+        background-color: white;
+        margin: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+        font-size: 60px;
+    }
+    td:hover{
+        background-color: orange;
+    }
+    body{
+        background: linear-gradient(rgb(6, 167, 179),rgb(84, 201, 84));
+    
+    }
+    .zoom{
+        animation-name: zoom;
+        animation-timing-function: linear;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+
+    }
+    @keyframes zoom{
+        0%{
+            transform: scale(1);
+
+        }
+        50%{
+            transform: scale(2);
+
+        }
+        100%{
+            transform: scale(1);
+
+        }
+
+    }
+    </style>
+    <script>
+        var emoji = ["👾","😍","😈","💩","😏","😹","💋","👹","👾","😍","😈","💩","😏","😹","💋","👹"];
+
+        var currentState =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+        var open1 = -1;
+        var open2 = -1;
+
+        function openbox(i,td)
+        {
+            if(open1<0)
+            {
+                td.innerHTML = emoji[i];
+                open1 =i;
+
+            }
+            else if(open2<0)
+            {
+                td.innerHTML = emoji[i];
+                open2 =i;
+
+                if(emoji[open1] == emoji[open2])
+                {
+                    document.getElementsByClassName("box")[open1].classList.add("zoom");
+                    document.getElementsByClassName("box")[open2].classList.add("zoom");
+                    open1 = -1; 
+                    open2 = -1;
+                    mat.play();
+                }
+                else
+                {
+                    setTimeout( function(){
+                        not.play();
+                        document.getElementsByClassName("box")[open1].innerHTML="";
+                        document.getElementsByClassName("box")[open2].innerHTML="";
+                        open1 = -1;
+                        open2 = -1;
+
+
+                    },10 );
+                    
+                }
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <audio src="audio.wav" id="mat"></audio>
+    <audio src="audio2.wav" id="not"></audio>
+    <audio src="my.mp3" ></audio>
+    <table>
+        <tr>
+            <td class="box" onclick="openbox(0,this)"></td>
+            <td class="box" onclick="openbox(1,this)"></td>
+            <td class="box" onclick="openbox(2,this)"></td>
+            <td class="box" onclick="openbox(3,this)"></td>
+        </tr>
+        <tr>
+            <td class="box" onclick="openbox(4,this)"></td>
+            <td class="box" onclick="openbox(5,this)"></td>
+            <td class="box" onclick="openbox(6,this)"></td>
+            <td class="box" onclick="openbox(7,this)"></td>
+        </tr>
+        <tr>
+            <td class="box" onclick="openbox(8,this)"></td>
+            <td class="box" onclick="openbox(9,this)"></td>
+            <td class="box" onclick="openbox(10,this)"></td>
+            <td class="box" onclick="openbox(11,this)"></td>
+        </tr>
+        <tr>
+            <td class="box" onclick="openbox(12,this)"></td>
+            <td class="box" onclick="openbox(13,this)"></td>
+            <td class="box" onclick="openbox(14,this)"></td>
+            <td class="box" onclick="openbox(15,this)"></td>
+        </tr>
+        
+    </table>
+</body>
+</html>

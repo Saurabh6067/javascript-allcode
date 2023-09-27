@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sm(){
+            var a = document.getElementById("tx1").value;
+            var b = document.getElementById("tx2").value;
+            a=parseInt(a);
+            b=parseInt(b);
+
+            c=a+b;
+
+            alert (c);
+        }
+        function sub(){
+            var a = document.getElementById("tx1").value;
+            var b = document.getElementById("tx2").value;
+            a=parseInt(a);
+            b=parseInt(b);
+
+            c=a-b;
+
+            alert (c);
+        }
+        function mul(){
+            var a = document.getElementById("tx1").value;
+            var b = document.getElementById("tx2").value;
+            a=parseInt(a);
+            b=parseInt(b);
+
+            c=a*b;
+
+            alert (c);
+        }
+        function div(){
+            var a = document.getElementById("tx1").value;
+            var b = document.getElementById("tx2").value;
+            a=parseInt(a);
+            b=parseInt(b);
+
+            c=a/b;
+
+            alert (c);
+         }
+    </script>
+</head>
+<body>
+    enter yuor name
+    <input type="text" id="tx1"><br><br>
+    enter your address
+
+    <input type="text" id="tx2">
+
+    <button onclick="sm()">Add</button>
+    <button onclick="sub()">Sub</button>
+    <button onclick="mul()">mul</button>
+    <button onclick="div()">div</button>
+    <button onclick="rem()">rem</button>
+
+</body>
+</html>

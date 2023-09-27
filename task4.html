@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            height: 200px;
+            width: 200px;
+            background-color: red;
+        }
+    </style>
+    <script>
+        function changebox(){
+            box1.style.backgroundColor = 'green';
+            box1.style.border = '5px solid black';
+            box1.style.borderRadius = "50%";
+        }
+    </script>
+</head>
+
+<body>
+    <button  onclick="changebox()">Click Me</button><br><br><br>   
+    <div id="box1">
+
+    </div>
+</body>
+</html>

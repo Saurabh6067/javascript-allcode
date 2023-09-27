@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 400px;
+            width: 600px;
+            margin: 0px auto;
+            background-color: rgb(211, 211, 211);
+            box-shadow: 5px 5px 5px silver;
+        }
+    </style>
+    <script>
+        function splitName()
+        {
+            var fullname = document.getElementById("fullname").value;
+            var name = fullname.split(" ");
+
+            if(name.length >= 2){
+                document.getElementById("firstname").value = name[0];
+                document.getElementById("lastname").value = name.slice(1).join(" ");
+
+            }
+            else{
+                document.getElementById("firstname").value ="";
+                document.getElementById("lastname").value ="";
+            }
+        }
+    </script>
+</head>
+<body>
+        <div class="box">
+            <label for="fullname" style="margin: 50px;" >Enter Your Full name  </label>
+            <input type="text"id="fullname" onkeyup="splitName()"><br><br>
+
+            <label for="firstname" style="margin: 50px;">First Name  </label>
+            <input type="text" id="firstname" readonly><br><br>
+
+            <label for="lastname" style="margin: 50px;">lastname </label>
+            <input type="text" id="lastname" readonly><br><br>
+
+        </div>
+</body>
+</html>
